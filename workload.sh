@@ -22,7 +22,7 @@ az ad app federated-credential create \
 productionApplicationRegistrationDetails=$(az ad app create --display-name 'toy-website-environments-production-bates')
 productionApplicationRegistrationObjectId=$(echo $productionApplicationRegistrationDetails | jq -r '.id')
 productionApplicationRegistrationAppId=$(echo $productionApplicationRegistrationDetails | jq -r '.appId')
-
+  
 az ad app federated-credential create \
    --id $productionApplicationRegistrationObjectId \
    --parameters "{\"name\":\"toy-website-environments-production-bates\",
