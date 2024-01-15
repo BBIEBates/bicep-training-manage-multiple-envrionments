@@ -43,7 +43,7 @@ az ad sp create --id $testApplicationRegistrationObjectId
 az role assignment create \
    --assignee $testApplicationRegistrationAppId \
    --role Contributor \
-   --scope $testResourceGroupResourceId
+   --scope /$testResourceGroupResourceId
 
 productionResourceGroupResourceId=$(az group create --name BatesToyWebsiteProduction --location westus3 --query id --output tsv)
 
@@ -51,7 +51,7 @@ az ad sp create --id $productionApplicationRegistrationObjectId
 az role assignment create \
    --assignee $productionApplicationRegistrationAppId \
    --role Contributor \
-   --scope $productionResourceGroupResourceId
+   --scope /$productionResourceGroupResourceId
 
 echo "AZURE_CLIENT_ID_TEST: $testApplicationRegistrationAppId"
 echo "AZURE_CLIENT_ID_PRODUCTION: $productionApplicationRegistrationAppId"
