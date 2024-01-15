@@ -1,5 +1,5 @@
 githubOrganizationName='bbiebates'
-githubRepositoryName='toy-website-environments-bates'
+githubRepositoryName='bicep-training-manage-multiple-envrionments'
 
 testApplicationRegistrationDetails=$(az ad app create --display-name 'toy-website-environments-test-bates')
 testApplicationRegistrationObjectId=$(echo $testApplicationRegistrationDetails | jq -r '.id')
